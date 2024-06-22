@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Estimate - Treeland Landscaping</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your stylesheet here -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+</head>
+<body>
+    <!-- Include the header -->
+    <header id="header">
+        <div class="logo">
+            <a href="index.html#" id="company-name-link">
+                <img src="logo.jpg" alt="Company Logo">
+                <h1>Treeland Landscaping</h1>
+            </a>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html#residential">Residential</a></li>
+                <li><a href="index.html#commercial">Commercial</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#snow-removal">Snow Removal</a></li>
+                <li><a href="index.html#about">About</a></li>
+            </ul>
+        </nav>
+        <!-- <a href="free-estimate.html" class="estimate-button">Free Estimate</a> -->
+        <!-- Replace Free Estimate button with Call Today text -->
+        <div class="phone-info">
+            <!-- <p>Call</p> -->
+            <a href="tel:7804610722" class="phone-number">
+                <img src="phone-icon.png" alt="Phone Icon">
+                (780) 461-0722
+            </a>
+        </div>
+    </header>
+</body>
+<body2>
+    <!-- Estimate form section -->
+    <section id="estimate-form" class="section">
+        <div class="container">
+            <h2>Request a Free Estimate</h2>
+            <form action="/Applications/XAMPP/htdocs/send_email.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <!-- Footer content, if any -->
+    </footer>
+
+    <!-- Optional: Your script includes, if any -->
+</body2>
+</html>

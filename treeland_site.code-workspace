@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../Applications/XAMPP/xamppfiles/htdocs/demo"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "treeland_site"
+	}
+}
