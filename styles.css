@@ -3,26 +3,28 @@
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
 }
 
+/* Header styles */
 header {
-    background-color: white; /*Header background*/
-    color: #62885A; /*Company Name Color*/
-    font-family: 'Merriweather', serif; /* Set font-family */
-    padding: 20px; /*from top*/
+    background-color: white;
+    color: #62885A;
+    font-family: 'Merriweather', serif;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%; /*from right side of screen*/
+    width: 100%;
     z-index: 1000;
 }
 
 #company-name-link {
     display: flex;
-    align-items: center; /* Align vertically */
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Use the same color as the parent element */
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo {
@@ -31,7 +33,7 @@ header {
 }
 
 .logo img {
-    height: 60px; /* Adjust height as needed */
+    height: 60px;
     margin-right: 10px;
 }
 
@@ -41,12 +43,11 @@ header {
 }
 
 .navigation li {
-    margin-right: 30px;
+    margin-right: 20px; /* Adjust for smaller screens */
 }
 
-/* Style for active navigation link */
 .nav-link.active {
-    color: #62885A; /* Change to your desired color */
+    color: #62885A;
 }
 
 .navigation a {
@@ -54,27 +55,26 @@ header {
     text-decoration: none;
     transition: color 0.3s;
     font-weight: bold;
-    position: relative; /* Add relative positioning */
+    position: relative;
 }
 
 .navigation a:hover {
-    color: #62885A; /* Change color on hover */
+    color: #62885A;
 }
 
 .navigation a::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Adjust the distance of the line from the text */
+    bottom: -5px;
     left: 0;
-    width: 0; /* Initially, the line has no width */
-    height: 2px; /* Adjust the thickness of the line */
+    width: 0;
+    height: 2px;
     background-color: #62885A;
-    transition: width 0.3s ease; /* Add transition effect */
+    transition: width 0.3s ease;
 }
 
 .navigation a:hover::after {
-    width: 100%; /* Expand the line to full width on hover */
-    color: #62885A; /* Change color on hover */
+    width: 100%;
 }
 
 .estimate-button {
@@ -87,55 +87,43 @@ header {
     transition: background-color 0.3s, color 0.3s;
     font-weight: bold;
     font-size: larger;
-    margin-right: 50px;
+    margin-right: 20px; /* Adjust for smaller screens */
 }
 
 .estimate-button:hover {
-    background-color: #1f1b1b; /* Change background color on hover */
-    color: white; /* Change text color on hover */
-}
-
-.phone-icon img {
-    width: 20px; /* Adjust the width of the phone icon as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 5px; /* Add some spacing between the icon and the phone number */
+    background-color: #1f1b1b;
 }
 
 .phone-info {
-    display: flex; /* Make the container a flexbox */
-    align-items: center; /* Align items vertically */
-    margin-right: 60px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust for smaller screens */
 }
 
 .phone-info p {
-    margin-right: 10px; /* Add some spacing between "Call Today" and the phone number */
-    font-size: larger; /* Match the font size of "Call Today" */
-}
-
-.phone-info .phone-number:hover {
-    /* transform: scale(1.1);  */
-    /* font-weight: bold;  */
-    color: #1f1b1b;
+    margin-right: 10px;
+    font-size: larger;
 }
 
 .phone-info .phone-number {
-    font-size: larger; /* Match the font size of "Call Today" */
-    text-decoration: none; /* Remove underline from the phone number */
-    display: flex; /* Make the container a flexbox */
-    align-items: center; /* Align items vertically */
-    color: inherit; /* Use the same color as the parent element */
-    font-family: 'Merriweather', serif; /* Set font-family */
+    font-size: larger;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: inherit;
+    font-family: 'Merriweather', serif;
 }
 
 .phone-info .phone-number img {
-    width: 20px; /* Adjust the width of the phone icon */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 5px; /* Add some spacing between the icon and the phone number */
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
 }
 
+/* Hero section */
 .hero {
-    height: 400px; /* Adjust height as needed */
-    background-image: url('lawn2.jpg'); /* Background photo */
+    height: 400px;
+    background-image: url('lawn2.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -147,7 +135,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,38 +144,45 @@ header {
     color: white;
 }
 
+.overlay h2 {
+    font-size: 2.5rem;
+    margin-top: 60px;
+    font-family: 'Merriweather', serif;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-family: 'Merriweather', serif;
+}
+
+.overlay .estimate-button {
+    margin-top: 60px;
+}
+
+/* Introduction section */
 #intro {
-    margin-top: 20px; /* Adjust the top margin to add space */
+    margin-top: 20px;
 }
 
 .intro-content {
     display: flex;
-    align-items: flex-start; /* Align items to the start of the flex container */
-}
-
-.intro-text {
-    flex: 1;
-    margin-right: 20px;
-    margin-top: 0; /* Reset top margin */
+    flex-direction: column; /* Adjust for smaller screens */
 }
 
 .intro-header {
     font-family: 'Merriweather', serif;
-    font-size: 2em; /* Larger font size for the header */
-    margin-top: 0; /* Align the header with the top of the intro photo */
-    margin-bottom: 20px; /* Add space between header and paragraphs */
-    line-height: 2; /* Double spacing */
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-.intro-text p {
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
+.intro-text {
+    margin-bottom: 20px;
 }
 
 .intro-image {
-    flex: 1;
-    max-width: 50%;
-    position: relative; /* Ensure the container is positioned relatively */
+    max-width: 100%;
+    margin-bottom: 20px;
 }
 
 .intro-image img {
@@ -197,147 +192,50 @@ header {
 
 .caption {
     position: absolute;
-    bottom: 10px; /* Adjust the distance from the bottom */
-    left: 10px; /* Adjust the distance from the left */
-    color: white; /* Caption text color */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 5px; /* Padding around the text */
-    font-size: 0.8em; /* Adjust font size as needed */
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    font-size: 0.8em;
 }
 
-.overlay h2 {
-    font-size: 2.5rem; /* Adjust font size as needed */
-    margin-top: 60px;
-    font-family: 'Merriweather', serif; /* Set font-family */
-}
-
-.overlay p {
-    font-size: 1.2rem; /* Adjust font size as needed */
-    margin-top: 10px;
-    font-family: 'Merriweather', serif; /* Set font-family */
-}
-
-.overlay .estimate-button {
-    margin-top: 60px; /* Increase space between text and button */
-}
-
+/* Sections common styles */
 .section {
-    padding: 50px 0; /* Add space above and below the section */
-    font-family: 'Merriweather', serif; /* Set font-family */
+    padding: 50px 0;
+    font-family: 'Merriweather', serif;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    font-family: 'Merriweather', serif; /* Set font-family */
 }
 
 .services {
-    margin-bottom: 30px; /* Add space between services and photo gallery */
-    font-family: 'Merriweather', serif; /* Set font-family */
-}
-
-#residential {
-    text-align: center;
-    margin-bottom: 15px; /* Add space below the residential section */
-}
-
-.residential-content {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-#maintenance {
-    text-align: center;
-    margin-bottom: 15px; /* Add space below the residential section */
-}
-
-.maintenance-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.residential-header {
-    font-family: 'Merriweather', serif;
-    font-size: 2em;
-    margin-bottom: 20px; /* Add space between header and description */
-}
-
-.residential-description {
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
-}
-
-.residential-description p {
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
-}
-
-.residential-services {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
-}
-
-.residential-services li {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
-}
-
-.checkmark {
-    color: green;
-    margin-right: 5px;
-}
-
-@media (min-width: 768px) {
-    .residential-services {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .residential-services li {
-        flex: 0 0 50%; /* Half of the width for each item */
-        margin-bottom: 10px;
-    }
-}
-
-.commercial-services {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
-}
-
-.commercial-services li {
     margin-bottom: 30px;
-    font-size: 1.2em;
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
 }
 
-.checkmark {
-    color: green;
-    margin-right: 5px;
+.services-header {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-@media (min-width: 768px) {
-    .commercial-services {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.services-description {
+    margin-bottom: 30px;
+    line-height: 2;
+}
 
-    .commercial-services li {
-        flex: 0 0 50%; /* Half of the width for each item */
-        margin-bottom: 10px;
-    }
+.services ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0;
+    line-height: 2;
+}
+
+.services li {
+    margin-bottom: 10px;
 }
 
 .gallery-grid {
@@ -359,7 +257,7 @@ header {
 }
 
 .photo:hover img {
-    transform: scale(1.1); /* Zoom effect on hover */
+    transform: scale(1.1);
 }
 
 .overlay2 {
@@ -368,16 +266,16 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .photo:hover .overlay2 {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1;
 }
 
 .overlay2 p {
@@ -385,80 +283,59 @@ header {
     font-size: 1.5rem;
     text-align: center;
     margin: 0;
-    font-family: 'Merriweather', serif; /* Set font-family */
+    font-family: 'Merriweather', serif;
 }
 
-/* Free-estimate page below */
-
-body2 {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Free estimate page */
 #estimate-form {
-    max-width: 600px; /* Adjust max-width as needed */
-    margin-top: 50px; /* Add top margin to the form */
-    margin-bottom: 40px; /* Add spacing below the section */
+    max-width: 600px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .form-group {
-    margin-bottom: 20px; /* Add spacing between form groups */
-}
-
-#estimate-form {
-    margin-bottom: 40px; /* Add spacing below the section */
-    text-align: center; /* Center the content horizontally */
-}
-
-#estimate-form h2 {
-    margin-bottom: 20px; /* Add spacing below the header */
-}
-
-.form-group {
-    margin-bottom: 20px; /* Add spacing between form groups */
+    margin-bottom: 20px;
 }
 
 .form-group label {
-    display: block; /* Ensure labels are displayed as block elements */
-    margin-bottom: 5px; /* Add spacing below labels */
-    text-align: left; /* Align label text to the left */
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
 .form-group input,
 .form-group textarea {
-    width: calc(100% - 20px); /* Adjust the width */
+    width: calc(100% - 20px);
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    margin-top: 5px; /* Add spacing between label and input */
+    margin-top: 5px;
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resizing of textarea */
+    resize: vertical;
 }
 
 button[type="submit"] {
-    background-color: #62885A; /* Button background color */
-    color: white; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Add border radius to button */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+    background-color: #62885A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button[type="submit"]:hover {
-    background-color: #1f1b1b; /* Change background color on hover */
+    background-color: #1f1b1b;
 }
 
-/* Commercial Section */
+/* Commercial section */
 #commercial {
     text-align: center;
-    margin-bottom: 40px; /* Add space below the commercial section */
+    margin-bottom: 40px;
 }
 
 .commercial-content {
@@ -469,20 +346,20 @@ button[type="submit"]:hover {
 .commercial-header {
     font-family: 'Merriweather', serif;
     font-size: 2em;
-    margin-bottom: 20px; /* Add space between header and description */
+    margin-bottom: 20px;
 }
 
 .commercial-description {
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
+    margin: 0 0 30px;
+    line-height: 2;
 }
 
 .commercial-services {
-    margin-bottom: 30px; /* Add space between services and gallery */
+    margin-bottom: 30px;
 }
 
 .commercial-services h3 {
-    margin-bottom: 10px; /* Add space below services header */
+    margin-bottom: 10px;
 }
 
 .commercial-services ul {
@@ -490,7 +367,7 @@ button[type="submit"]:hover {
     padding: 0;
     text-align: left;
     margin: 0;
-    line-height: 2; /* Double spacing */
+    line-height: 2;
 }
 
 .commercial-services li {
@@ -508,10 +385,10 @@ button[type="submit"]:hover {
     height: auto;
 }
 
-/* Projects Section */
+/* Projects section */
 #projects {
     text-align: center;
-    margin-bottom: 40px; /* Add space below the projects section */
+    margin-bottom: 40px;
 }
 
 .projects-content {
@@ -522,7 +399,7 @@ button[type="submit"]:hover {
 .projects-header {
     font-family: 'Merriweather', serif;
     font-size: 2em;
-    margin-bottom: 20px; /* Add space between header and gallery */
+    margin-bottom: 20px;
 }
 
 .project-gallery {
@@ -539,166 +416,182 @@ button[type="submit"]:hover {
 }
 
 .project:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .project img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
-.project-description {
+.project-info {
     padding: 10px;
 }
 
-.project-description h3 {
+.project-info h3 {
     margin-bottom: 10px;
 }
 
-.project-description p {
-    margin-bottom: 0;
+.project-info p {
+    line-height: 1.6;
 }
 
-/* Snow Removal Section */
-#snow-removal {
+/* Contact section */
+#contact {
     text-align: center;
-    margin-bottom: 40px; /* Add space below the snow removal section */
+    margin-bottom: 40px;
 }
 
-.snow-removal-content {
-    max-width: 800px;
+.contact-content {
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.snow-removal-header {
+.contact-header {
     font-family: 'Merriweather', serif;
     font-size: 2em;
-    margin-bottom: 20px; /* Add space between header and description */
+    margin-bottom: 20px;
 }
 
-.snow-removal-description {
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
-}
-
-.snow-removal-description p {
-    margin: 0 0 30px; /* Add space between paragraphs */
-    line-height: 2; /* Double spacing */
-}
-
-.snow-removal-services {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.photo2 {
-    max-width: 40%; /* Adjust width as needed */
-    order: 1; /* Change the order to display the photo before the text */
-    position: relative; /* Ensure the container is positioned relatively */
-    flex: 1;
-    margin-bottom: 20px; /* Add space below the image */
-    display: flex; /* Use flexbox */
-    align-items: center; /* Center items vertically */
-}
-
-.photo2 img {
-    max-width: 100%;
-    height: auto;
-}
-
-.other-services {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin: 0;
-    line-height: 2; /* Double spacing */
-    font-size: 1.2em; /* Match font size with residential services */
-}
-
-
-
-
-.snow-removal-services h3 {
-    margin-bottom: 10px; /* Add space below services header */
-}
-
-.snow-removal-services ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin: 0;
-    line-height: 2; /* Double spacing */
-}
-
-.snow-removal-services li {
-    margin-bottom: 10px;
-}
-
-
-.about-header {
-    font-family: 'Merriweather', serif;
-    font-size: 2em;
-    margin-bottom: 20px; /* Add space between header and description */
-    text-align: center;
-}
-
-.about-description p {
-    line-height: 2; /* Double spacing */
-    text-align: center;
-}
-
-.contact-link {
-    color: white; /* Match the color of other links on the site */
-    text-decoration: none; /* Remove the underline */
-}
-
-.contact-link:hover {
-    color: #1f1b1b; /* Change color on hover */
+.contact-description {
+    margin: 0 0 30px;
+    line-height: 2;
 }
 
 .contact-info {
-    color: white; /* Match the color of other links on the site */
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-/* Position the copyright container */
-.copyright-container {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+.contact-info-item {
+    flex: 1 0 45%; /* Adjust for smaller screens */
+    margin-bottom: 20px;
 }
 
-/* Style for copyright text */
-.copyright {
-    font-size: 0.8em; /* Adjust font size as needed */
-    color: white; /* Adjust color as needed */
+.contact-info-item p {
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
-#outro {
-    height: 300px; /* Adjust the height of the outro background */
-    background-image: url('lawn2.jpg'); /* Background image */
-    background-size: cover; /* Ensure the background covers the entire container */
-    background-position: center bottom; /* Center the background image vertically and align it to the top */
-    position: relative; /* Ensure proper positioning */
-    margin-top: 150px; /* Adjust the top margin to add space */
-
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-#outro-content {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.contact-form .form-group textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    background-color: #62885A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #1f1b1b;
+}
+
+/* Footer */
+footer {
+    background-color: #62885A;
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    color: white; /* Text color */
 }
 
-
-.logo2-container {
-    text-align: center;
+.footer-links {
+    margin-bottom: 20px;
 }
 
-.logo2 {
-    width: 200px; /* Adjust the size as needed */
-    height: auto; /* Maintain aspect ratio */
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #1f1b1b;
+}
+
+.footer-text {
+    font-size: 0.8em;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .estimate-button {
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .phone-info {
+        margin-right: 0;
+    }
+
+    .intro-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .phone-info p {
+        font-size: normal;
+    }
+
+    .contact-info-item {
+        flex: 1 0 100%;
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .project-info {
+        padding: 5px;
+    }
+
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        width: 100%;
+    }
 }
