@@ -3,29 +3,26 @@
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
 }
 
-/* Header styles */
 header {
-    background-color: white;
-    color: #62885A;
-    font-family: 'Merriweather', serif;
-    padding: 20px;
+    background-color: white; /*Header background*/
+    color: #62885A; /*Company Name Color*/
+    font-family: 'Merriweather', serif; /* Set font-family */
+    padding: 20px; /*from top*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%;
+    width: 100%; /*from right side of screen*/
     z-index: 1000;
 }
 
 #company-name-link {
     display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    font-size: 1.5rem; /* Adjust font size */
+    align-items: center; /* Align vertically */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the same color as the parent element */
 }
 
 .logo {
@@ -34,55 +31,111 @@ header {
 }
 
 .logo img {
-    height: 40px; /* Adjust logo size */
+    height: 60px; /* Adjust height as needed */
     margin-right: 10px;
 }
 
-.navigation {
-    display: none; /* Hide navigation initially */
-}
-
-.hamburger-menu {
-    display: block; /* Display hamburger menu */
-}
-
-/* Mobile navigation */
-.mobile-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 1500;
+.navigation ul {
+    list-style-type: none;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
 }
 
-.mobile-nav.active {
-    transform: translateY(0);
+.navigation li {
+    margin-right: 30px;
 }
 
-.mobile-nav a {
-    text-decoration: none;
+/* Style for active navigation link */
+.nav-link.active {
+    color: #62885A; /* Change to your desired color */
+}
+
+.navigation a {
     color: #1f1b1b;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    text-decoration: none;
     transition: color 0.3s;
+    font-weight: bold;
+    position: relative; /* Add relative positioning */
 }
 
-.mobile-nav a:hover {
-    color: #62885A;
+.navigation a:hover {
+    color: #62885A; /* Change color on hover */
 }
 
-/* Hero section */
+.navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust the distance of the line from the text */
+    left: 0;
+    width: 0; /* Initially, the line has no width */
+    height: 2px; /* Adjust the thickness of the line */
+    background-color: #62885A;
+    transition: width 0.3s ease; /* Add transition effect */
+}
+
+.navigation a:hover::after {
+    width: 100%; /* Expand the line to full width on hover */
+    color: #62885A; /* Change color on hover */
+}
+
+.estimate-button {
+    background-color: #62885A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    font-size: larger;
+    margin-right: 50px;
+}
+
+.estimate-button:hover {
+    background-color: #1f1b1b; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+.phone-icon img {
+    width: 20px; /* Adjust the width of the phone icon as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Add some spacing between the icon and the phone number */
+}
+
+.phone-info {
+    display: flex; /* Make the container a flexbox */
+    align-items: center; /* Align items vertically */
+    margin-right: 60px;
+}
+
+.phone-info p {
+    margin-right: 10px; /* Add some spacing between "Call Today" and the phone number */
+    font-size: larger; /* Match the font size of "Call Today" */
+}
+
+.phone-info .phone-number:hover {
+    /* transform: scale(1.1);  */
+    /* font-weight: bold;  */
+    color: #1f1b1b;
+}
+
+.phone-info .phone-number {
+    font-size: larger; /* Match the font size of "Call Today" */
+    text-decoration: none; /* Remove underline from the phone number */
+    display: flex; /* Make the container a flexbox */
+    align-items: center; /* Align items vertically */
+    color: inherit; /* Use the same color as the parent element */
+    font-family: 'Merriweather', serif; /* Set font-family */
+}
+
+.phone-info .phone-number img {
+    width: 20px; /* Adjust the width of the phone icon */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Add some spacing between the icon and the phone number */
+}
+
 .hero {
-    height: 400px;
-    background-image: url('lawn2.jpg');
+    height: 400px; /* Adjust height as needed */
+    background-image: url('lawn2.jpg'); /* Background photo */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -94,7 +147,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,47 +156,38 @@ header {
     color: white;
 }
 
-.overlay h2 {
-    font-size: 2.5rem;
-    margin-top: 60px;
-    font-family: 'Merriweather', serif;
-}
-
-.overlay p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    font-family: 'Merriweather', serif;
-}
-
-.overlay .estimate-button {
-    margin-top: 60px;
-}
-
-/* Introduction section */
 #intro {
-    margin-top: 20px;
-    padding: 0 20px; /* Add padding to match container width */
+    margin-top: 20px; /* Adjust the top margin to add space */
 }
 
 .intro-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start of the flex container */
+}
+
+.intro-text {
+    flex: 1;
+    margin-right: 20px;
+    margin-top: 0; /* Reset top margin */
 }
 
 .intro-header {
     font-family: 'Merriweather', serif;
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2em; /* Larger font size for the header */
+    margin-top: 0; /* Align the header with the top of the intro photo */
+    margin-bottom: 20px; /* Add space between header and paragraphs */
+    line-height: 2; /* Double spacing */
 }
 
-.intro-text {
-    margin-bottom: 20px;
+.intro-text p {
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
 }
 
 .intro-image {
-    max-width: 100%;
-    margin-bottom: 20px;
+    flex: 1;
+    max-width: 50%;
+    position: relative; /* Ensure the container is positioned relatively */
 }
 
 .intro-image img {
@@ -153,50 +197,147 @@ header {
 
 .caption {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    font-size: 0.8em;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 10px; /* Adjust the distance from the left */
+    color: white; /* Caption text color */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px; /* Padding around the text */
+    font-size: 0.8em; /* Adjust font size as needed */
 }
 
-/* Sections common styles */
+.overlay h2 {
+    font-size: 2.5rem; /* Adjust font size as needed */
+    margin-top: 60px;
+    font-family: 'Merriweather', serif; /* Set font-family */
+}
+
+.overlay p {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    margin-top: 10px;
+    font-family: 'Merriweather', serif; /* Set font-family */
+}
+
+.overlay .estimate-button {
+    margin-top: 60px; /* Increase space between text and button */
+}
+
 .section {
-    padding: 50px 20px; /* Add padding to match container width */
-    font-family: 'Merriweather', serif;
+    padding: 50px 0; /* Add space above and below the section */
+    font-family: 'Merriweather', serif; /* Set font-family */
 }
 
 .container {
-    max-width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Add padding to match container width */
+    padding: 0 20px;
+    font-family: 'Merriweather', serif; /* Set font-family */
 }
 
 .services {
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Add space between services and photo gallery */
+    font-family: 'Merriweather', serif; /* Set font-family */
 }
 
-.services-header {
+#residential {
+    text-align: center;
+    margin-bottom: 15px; /* Add space below the residential section */
+}
+
+.residential-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#maintenance {
+    text-align: center;
+    margin-bottom: 15px; /* Add space below the residential section */
+}
+
+.maintenance-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.residential-header {
+    font-family: 'Merriweather', serif;
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Add space between header and description */
 }
 
-.services-description {
-    margin-bottom: 30px;
-    line-height: 2;
+.residential-description {
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
 }
 
-.services ul {
+.residential-description p {
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
+}
+
+.residential-services {
     list-style: none;
     padding: 0;
     text-align: left;
-    margin: 0;
-    line-height: 2;
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
 }
 
-.services li {
+.residential-services li {
     margin-bottom: 10px;
+    font-size: 1.2em;
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
+}
+
+.checkmark {
+    color: green;
+    margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+    .residential-services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .residential-services li {
+        flex: 0 0 50%; /* Half of the width for each item */
+        margin-bottom: 10px;
+    }
+}
+
+.commercial-services {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
+}
+
+.commercial-services li {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
+}
+
+.checkmark {
+    color: green;
+    margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+    .commercial-services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .commercial-services li {
+        flex: 0 0 50%; /* Half of the width for each item */
+        margin-bottom: 10px;
+    }
 }
 
 .gallery-grid {
@@ -218,7 +359,7 @@ header {
 }
 
 .photo:hover img {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Zoom effect on hover */
 }
 
 .overlay2 {
@@ -227,16 +368,16 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
+    opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease;
 }
 
 .photo:hover .overlay2 {
-    opacity: 1;
+    opacity: 1; /* Show overlay on hover */
 }
 
 .overlay2 p {
@@ -244,85 +385,104 @@ header {
     font-size: 1.5rem;
     text-align: center;
     margin: 0;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', serif; /* Set font-family */
 }
 
-/* Free estimate page */
+/* Free-estimate page below */
+
+body2 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #estimate-form {
-    max-width: 100%;
-    margin-top: 50px;
-    margin-bottom: 40px;
-    padding: 0 20px; /* Add padding to match container width */
-    text-align: center;
+    max-width: 600px; /* Adjust max-width as needed */
+    margin-top: 50px; /* Add top margin to the form */
+    margin-bottom: 40px; /* Add spacing below the section */
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Add spacing between form groups */
+}
+
+#estimate-form {
+    margin-bottom: 40px; /* Add spacing below the section */
+    text-align: center; /* Center the content horizontally */
+}
+
+#estimate-form h2 {
+    margin-bottom: 20px; /* Add spacing below the header */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Add spacing between form groups */
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
+    display: block; /* Ensure labels are displayed as block elements */
+    margin-bottom: 5px; /* Add spacing below labels */
+    text-align: left; /* Align label text to the left */
 }
 
 .form-group input,
 .form-group textarea {
-    width: calc(100% - 20px);
+    width: calc(100% - 20px); /* Adjust the width */
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    margin-top: 5px;
+    margin-top: 5px; /* Add spacing between label and input */
 }
 
 .form-group textarea {
-    resize: vertical;
+    resize: vertical; /* Allow vertical resizing of textarea */
 }
 
 button[type="submit"] {
-    background-color: #62885A;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #62885A; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius to button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
 }
 
 button[type="submit"]:hover {
-    background-color: #1f1b1b;
+    background-color: #1f1b1b; /* Change background color on hover */
 }
 
-/* Commercial section */
+/* Commercial Section */
 #commercial {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* Add space below the commercial section */
 }
 
 .commercial-content {
-    max-width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px; /* Add padding to match container width */
 }
 
 .commercial-header {
     font-family: 'Merriweather', serif;
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Add space between header and description */
 }
 
 .commercial-description {
-    margin: 0 0 30px;
-    line-height: 2;
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
 }
 
 .commercial-services {
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Add space between services and gallery */
 }
 
 .commercial-services h3 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Add space below services header */
 }
 
 .commercial-services ul {
@@ -330,7 +490,7 @@ button[type="submit"]:hover {
     padding: 0;
     text-align: left;
     margin: 0;
-    line-height: 2;
+    line-height: 2; /* Double spacing */
 }
 
 .commercial-services li {
@@ -348,310 +508,197 @@ button[type="submit"]:hover {
     height: auto;
 }
 
-/* Projects section */
+/* Projects Section */
 #projects {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* Add space below the projects section */
 }
 
 .projects-content {
-    max-width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px; /* Add padding to match container width */
 }
 
 .projects-header {
     font-family: 'Merriweather', serif;
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Add space between header and gallery */
 }
 
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
 
 .project {
     overflow: hidden;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.project:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
 }
 
 .project img {
     width: 100%;
     height: auto;
-    display: block;
 }
 
-.project-info {
+.project-description {
     padding: 10px;
 }
 
-.project-info h3 {
+.project-description h3 {
     margin-bottom: 10px;
 }
 
-.project-info p {
-    line-height: 1.6;
+.project-description p {
+    margin-bottom: 0;
 }
 
-/* Contact section */
-#contact {
+/* Snow Removal Section */
+#snow-removal {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* Add space below the snow removal section */
 }
 
-.contact-content {
-    max-width: 100%;
+.snow-removal-content {
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px; /* Add padding to match container width */
 }
 
-.contact-header {
+.snow-removal-header {
     font-family: 'Merriweather', serif;
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Add space between header and description */
 }
 
-.contact-description {
-    margin: 0 0 30px;
-    line-height: 2;
+.snow-removal-description {
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
+}
+
+.snow-removal-description p {
+    margin: 0 0 30px; /* Add space between paragraphs */
+    line-height: 2; /* Double spacing */
+}
+
+.snow-removal-services {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.photo2 {
+    max-width: 40%; /* Adjust width as needed */
+    order: 1; /* Change the order to display the photo before the text */
+    position: relative; /* Ensure the container is positioned relatively */
+    flex: 1;
+    margin-bottom: 20px; /* Add space below the image */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+}
+
+.photo2 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.other-services {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0;
+    line-height: 2; /* Double spacing */
+    font-size: 1.2em; /* Match font size with residential services */
+}
+
+
+
+
+.snow-removal-services h3 {
+    margin-bottom: 10px; /* Add space below services header */
+}
+
+.snow-removal-services ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0;
+    line-height: 2; /* Double spacing */
+}
+
+.snow-removal-services li {
+    margin-bottom: 10px;
+}
+
+
+.about-header {
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+    margin-bottom: 20px; /* Add space between header and description */
+    text-align: center;
+}
+
+.about-description p {
+    line-height: 2; /* Double spacing */
+    text-align: center;
+}
+
+.contact-link {
+    color: white; /* Match the color of other links on the site */
+    text-decoration: none; /* Remove the underline */
+}
+
+.contact-link:hover {
+    color: #1f1b1b; /* Change color on hover */
 }
 
 .contact-info {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column; /* Stack contact info vertically */
-    justify-content: center;
-    align-items: center;
+    color: white; /* Match the color of other links on the site */
 }
 
-.contact-info-item {
-    margin-bottom: 20px;
+/* Position the copyright container */
+.copyright-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }
 
-.contact-info-item p {
-    margin-bottom: 10px;
-    line-height: 1.6;
+/* Style for copyright text */
+.copyright {
+    font-size: 0.8em; /* Adjust font size as needed */
+    color: white; /* Adjust color as needed */
 }
 
-.contact-form {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px; /* Add padding to match container width */
-    text-align: left;
+#outro {
+    height: 300px; /* Adjust the height of the outro background */
+    background-image: url('lawn2.jpg'); /* Background image */
+    background-size: cover; /* Ensure the background covers the entire container */
+    background-position: center bottom; /* Center the background image vertically and align it to the top */
+    position: relative; /* Ensure proper positioning */
+    margin-top: 150px; /* Adjust the top margin to add space */
+
 }
 
-.contact-form .form-group {
-    margin-bottom: 20px;
+#outro-content {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Text color */
 }
 
-.contact-form .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
 
-.contact-form .form-group input,
-.contact-form .form-group textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin-top: 5px;
-}
-
-.contact-form .form-group textarea {
-    resize: vertical;
-}
-
-.contact-form button[type="submit"] {
-    background-color: #62885A;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.contact-form button[type="submit"]:hover {
-    background-color: #1f1b1b;
-}
-
-/* Footer */
-footer {
-    background-color: #62885A;
-    color: white;
-    padding: 20px 0;
+.logo2-container {
     text-align: center;
 }
 
-.footer-links {
-    margin-bottom: 20px;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #1f1b1b;
-}
-
-.footer-text {
-    font-size: 0.8em;
-}
-
-/* Media Queries */
-@media only screen and (max-width: 768px) {
-    /* Header */
-    .navigation {
-        display: none; /* Hide regular navigation */
-    }
-
-    .hamburger-menu {
-        display: block; /* Display hamburger menu */
-    }
-
-    #company-name-link {
-        font-size: 1.5rem; /* Adjust company name font size */
-    }
-
-    /* Mobile navigation */
-    .mobile-nav {
-        padding: 20px; /* Add padding to mobile nav */
-    }
-
-    .mobile-nav.active {
-        transform: translateY(0);
-    }
-
-    /* Hero section */
-    .hero {
-        height: 300px; /* Adjust hero height for mobile */
-    }
-
-    .overlay h2 {
-        font-size: 2rem; /* Adjust font size for mobile */
-        margin-top: 40px; /* Adjust margin for mobile */
-    }
-
-    .overlay p {
-        font-size: 1rem; /* Adjust font size for mobile */
-        margin-top: 5px; /* Adjust margin for mobile */
-    }
-
-    /* Introduction section */
-    .intro-header {
-        font-size: 1.8em; /* Adjust font size for mobile */
-        margin-bottom: 10px; /* Adjust margin for mobile */
-    }
-
-    .intro-text {
-        margin-bottom: 10px; /* Adjust margin for mobile */
-    }
-
-    /* Sections common styles */
-    .section {
-        padding: 30px 20px; /* Adjust padding for mobile */
-    }
-
-    .services-header {
-        font-size: 1.8em; /* Adjust font size for mobile */
-        margin-bottom: 15px; /* Adjust margin for mobile */
-    }
-
-    .services-description {
-        margin-bottom: 20px; /* Adjust margin for mobile */
-        line-height: 1.8; /* Adjust line height for mobile */
-    }
-
-    .services ul {
-        line-height: 1.8; /* Adjust line height for mobile */
-    }
-
-    .gallery-grid {
-        grid-gap: 15px; /* Adjust grid gap for mobile */
-    }
-
-    .photo {
-        margin-bottom: 15px; /* Adjust margin for mobile */
-    }
-
-    .overlay2 p {
-        font-size: 1.2rem; /* Adjust font size for mobile */
-    }
-
-    /* Free estimate page */
-    #estimate-form {
-        margin-top: 30px; /* Adjust margin for mobile */
-        margin-bottom: 30px; /* Adjust margin for mobile */
-    }
-
-    /* Commercial section */
-    .commercial-header {
-        font-size: 1.8em; /* Adjust font size for mobile */
-        margin-bottom: 15px; /* Adjust margin for mobile */
-    }
-
-    .commercial-description {
-        margin-bottom: 20px; /* Adjust margin for mobile */
-        line-height: 1.8; /* Adjust line height for mobile */
-    }
-
-    .commercial-services h3 {
-        margin-bottom: 10px; /* Adjust margin for mobile */
-    }
-
-    .project-images {
-        grid-gap: 15px; /* Adjust grid gap for mobile */
-    }
-
-    /* Projects section */
-    .projects-header {
-        font-size: 1.8em; /* Adjust font size for mobile */
-        margin-bottom: 15px; /* Adjust margin for mobile */
-    }
-
-    .project-gallery {
-        grid-gap: 15px; /* Adjust grid gap for mobile */
-    }
-
-    .project-info {
-        padding: 5px; /* Adjust padding for mobile */
-    }
-
-    /* Contact section */
-    .contact-header {
-        font-size: 1.8em; /* Adjust font size for mobile */
-        margin-bottom: 15px; /* Adjust margin for mobile */
-    }
-
-    .contact-description {
-        margin-bottom: 20px; /* Adjust margin for mobile */
-        line-height: 1.8; /* Adjust line height for mobile */
-    }
-
-    .contact-info {
-        margin-bottom: 20px; /* Adjust margin for mobile */
-    }
-
-    .contact-info-item p {
-        margin-bottom: 5px; /* Adjust margin for mobile */
-        line-height: 1.8; /* Adjust line height for mobile */
-    }
-
-    .contact-form {
-        margin-bottom: 30px; /* Adjust margin for mobile */
-    }
-
-    .contact-form .form-group {
-        margin-bottom: 15px; /* Adjust margin for mobile */
-    }
+.logo2 {
+    width: 200px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
 }
