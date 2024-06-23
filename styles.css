@@ -790,4 +790,12 @@ button[type="submit"]:hover {
     ul {
         line-height: 1.5; /* Single spacing for all lists */
     }
+
+    .logo2 {
+    max-width: 100%; /* Ensure the image does not exceed its container's width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any default inline styles */
+    margin: 0 auto; /* Center the image horizontally */
+    }
+
 }
