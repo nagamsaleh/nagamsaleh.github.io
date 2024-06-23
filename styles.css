@@ -25,7 +25,7 @@ header {
     align-items: center;
     text-decoration: none;
     color: inherit;
-    font-size: 1.5rem; /* Adjust font size for mobile */
+    font-size: 1.5rem; /* Adjust font size */
 }
 
 .logo {
@@ -34,42 +34,33 @@ header {
 }
 
 .logo img {
-    height: 40px; /* Adjust logo size for mobile */
+    height: 40px; /* Adjust logo size */
     margin-right: 10px;
 }
 
 .navigation {
-    display: none; /* Hide navigation links by default */
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    margin-left: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #62885A;
+    font-size: 1.2rem; /* Adjust font size */
 }
 
 .hamburger-menu {
-    display: block; /* Display hamburger menu on mobile */
-    cursor: pointer;
-}
-
-.hamburger-icon {
-    display: block;
-    width: 30px;
-    height: 2px;
-    background-color: #62885A;
-    margin-bottom: 5px;
-    transition: transform 0.3s ease;
-}
-
-.hamburger-icon:last-child {
-    margin-bottom: 0;
-}
-
-.hamburger-menu.active .hamburger-icon:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger-menu.active .hamburger-icon:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-menu.active .hamburger-icon:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
+    display: none; /* Hide hamburger menu initially */
 }
 
 /* Mobile navigation */
@@ -546,12 +537,16 @@ footer {
     }
 
     #company-name-link {
-        font-size: 1.2rem; /* Adjust company name font size */
+        font-size: 1.5rem; /* Adjust company name font size */
     }
 
     /* Mobile navigation */
     .mobile-nav {
         padding: 20px; /* Add padding to mobile nav */
+    }
+
+    .mobile-nav.active {
+        transform: translateY(0);
     }
 
     /* Hero section */
@@ -629,10 +624,6 @@ footer {
 
     .commercial-services h3 {
         margin-bottom: 10px; /* Adjust margin for mobile */
-    }
-
-    .commercial-services ul {
-        line-height: 1.8; /* Adjust line height for mobile */
     }
 
     .project-images {
