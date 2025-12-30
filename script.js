@@ -98,6 +98,36 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    function adjustTextForScreenSize() {
+        const isSmallScreen = window.innerWidth <= 600; // Define small screen size
+        const textElements = [
+            {
+                selector: ".intro-text p",
+                longText: "With Treeland Landscaping, turn your outdoor dreams into stunning realities. With our dedicated team of experts and a passion for creating beautiful landscapes, we offer a full range of design services tailored to your unique needs.",
+                shortText: "With Treeland Landscaping, turn your outdoor dreams into stunning realities. With our dedicated team of experts and a passion for creating beautiful landscapes, we offer a full range of design services tailored to your unique needs."
+            }
+        ];
+
+        textElements.forEach(({ selector, longText, shortText }) => {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.textContent = isSmallScreen ? shortText : longText;
+            }
+        });
+
+        const secondParagraph = document.querySelector(".intro-text p:nth-of-type(2)");
+        if (secondParagraph) {
+            secondParagraph.style.display = isSmallScreen ? "none" : "block";
+        }
+    }
+
+    // Adjust text on page load
+    adjustTextForScreenSize();
+
+    // Adjust text on window resize
+    window.addEventListener("resize", adjustTextForScreenSize);
+});
 
 lightbox.option({
     'resizeDuration': 200,
