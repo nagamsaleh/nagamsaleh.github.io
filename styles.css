@@ -206,9 +206,15 @@ header {
 }
 
 .overlay h2 {
-    font-size: 2.5rem; /* Adjust font size as needed */
+    font-size: 2.5rem; /* Default size for desktop */
     margin-top: 60px;
     font-family: 'Merriweather', serif; /* Set font-family */
+}
+
+@media (max-width: 1000px) {
+    .overlay h2 {
+        font-size: 180%; /* Reduce font size to 80% of the default for smaller screens */
+    }
 }
 
 .overlay p {
@@ -616,9 +622,6 @@ button[type="submit"]:hover {
     font-size: 1.2em; /* Match font size with residential services */
 }
 
-
-
-
 .snow-removal-services h3 {
     margin-bottom: 10px; /* Add space below services header */
 }
@@ -635,7 +638,6 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
-
 .about-header {
     font-family: 'Merriweather', serif;
     font-size: 2em;
@@ -644,6 +646,7 @@ button[type="submit"]:hover {
 }
 
 .about-description p {
+    margin-bottom: 10px; /* Reduce space below the paragraph */
     line-height: 2; /* Double spacing */
     text-align: center;
 }
@@ -675,24 +678,23 @@ button[type="submit"]:hover {
 }
 
 #outro {
-    height: 300px; /* Adjust the height of the outro background */
+    height: 250px; /* Reduce the height of the outro background */
+    margin-top: 50px; /* Reduce space above the outro section */
     background-image: url('lawn2.jpg'); /* Background image */
     background-size: cover; /* Ensure the background covers the entire container */
-    background-position: center bottom; /* Center the background image vertically and align it to the top */
+    background-position: center bottom; /* Center the background image vertically and align it to the bottom */
     position: relative; /* Ensure proper positioning */
-    margin-top: 150px; /* Adjust the top margin to add space */
-
 }
 
 #outro-content {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     color: white; /* Text color */
+    padding-top: 10px; /* Add padding to move the content up */
 }
 
+.outro-text {
+    margin-top: -100px; /* Use negative margin to move the text up */
+}
 
 .logo2-container {
     text-align: center;
@@ -702,14 +704,13 @@ button[type="submit"]:hover {
 .logo2 {
     width: 100%; /* Ensure it scales dynamically */
     height: auto; /* Maintain aspect ratio */
-    margin-top: 100px; /* Move the logo2 down to fill the blank space */
+    margin-top: 20px; /* Reduce space above the logo2 */
 }
 
 .logo2 img {
     width: 80%; /* Ensure the image respects the container's width */
     height: auto; /* Maintain aspect ratio */
 }
-
 
 .hamburger-menu {
     display: none;
@@ -765,5 +766,35 @@ button[type="submit"]:hover {
 
     .phone-info {
         margin-right: 40px; /* Adjust the margin-right for mobile view */
+    }
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 80%; /* Reduce the base font size for all text */
+    }
+
+    header, footer, #intro, #outro, .section {
+        font-size: inherit; /* Ensure all sections inherit the reduced font size */
+    }
+
+    h1 {
+        font-size: 1.2rem; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: 1rem; /* Adjust heading size */
+    }
+
+    h3 {
+        font-size: 1rem; /* Adjust heading size */
+    }
+
+    p, li, a {
+        font-size: 1rem; /* Adjust paragraph, list item, and link size */
+    }
+
+    .estimate-button, .phone-info, .copyright {
+        font-size: 0.9rem; /* Adjust button, phone info, and footer text size */
     }
 }
