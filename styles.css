@@ -185,14 +185,16 @@ header {
 }
 
 .intro-image {
-    flex: 1;
-    max-width: 50%;
+    flex: none; /* Prevent flexbox from shrinking the image */
+    width: 100%; /* Allow the image to take the full width of its container */
+    max-width: 600px; /* Set a maximum width for the image */
+    margin: 0 auto; /* Center the image horizontally */
     position: relative; /* Ensure the container is positioned relatively */
 }
 
 .intro-image img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Ensure the image scales to fit the container */
+    height: auto; /* Maintain the aspect ratio */
 }
 
 .caption {
@@ -797,6 +799,38 @@ button[type="submit"]:hover {
 
     .estimate-button, .phone-info, .copyright {
         font-size: 0.9rem; /* Adjust button, phone info, and footer text size */
+    }
+}
+
+/* Default layout for larger screens */
+.intro-content, .snow-removal-services {
+    display: flex;
+    align-items: flex-start; /* Align items to the start of the flex container */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .intro-content{
+        display: flex;
+        flex-direction: column; /* Stack the image above the text */
+        align-items: center; /* Center-align items */
+        text-align: center;
+    }
+
+    .snow-removal-services {
+        display: flex;
+        flex-direction: column-reverse; /* Stack the image above the text */
+        align-items: center; /* Center-align items */
+    }
+
+    .intro-image, .photo2 {
+        margin-bottom: 20px; /* Add spacing below the image */
+        width: 100%; /* Ensure the image takes full width */
+    }
+
+    .intro-text, .snow-removal-description {
+        text-align: center; /* Center-align the text */
+        padding: 0 10px; /* Add some padding for better readability */
     }
 }
 
