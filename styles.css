@@ -664,7 +664,7 @@ button[type="submit"]:hover {
 /* Position the copyright container */
 .copyright-container {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 20px;
 }
 
@@ -696,9 +696,74 @@ button[type="submit"]:hover {
 
 .logo2-container {
     text-align: center;
+    margin-top: 100px; /* Add spacing above the logo2 container */
 }
 
 .logo2 {
-    width: 200px; /* Adjust the size as needed */
+    width: 100%; /* Ensure it scales dynamically */
     height: auto; /* Maintain aspect ratio */
+    margin-top: 100px; /* Move the logo2 down to fill the blank space */
+}
+
+.logo2 img {
+    width: 80%; /* Ensure the image respects the container's width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    background-color: #62885A;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 1000px) {
+    .hamburger-menu {
+        display: flex;
+        position: relative; /* Make the hamburger menu the positioning context */
+        z-index: 1001; /* Ensure the hamburger menu stays above other elements */
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70%; /* Position the dropdown directly below the hamburger menu */
+        left: 50%; /* Start positioning from the center of the header */
+        transform: translateX(20%); /* Center-align the dropdown relative to the hamburger menu */
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 1000; /* Ensure the dropdown appears above other elements */
+        width: auto; /* Adjust width to fit the dropdown content */
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navigation li {
+        margin: 10px 0;
+    }
+
+    .phone-info {
+        margin-right: 40px; /* Adjust the margin-right for mobile view */
+    }
 }

@@ -15,6 +15,22 @@ document.addEventListener("DOMContentLoaded", function() {
             behavior: "smooth" // Smooth scrolling animation
         });
     });
+
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const navigation = document.querySelector(".navigation");
+    const navLinks = document.querySelectorAll(".navigation a");
+
+    // Toggle the dropdown menu when the hamburger menu is clicked
+    hamburgerMenu.addEventListener("click", function() {
+        navigation.classList.toggle("active");
+    });
+
+    // Close the dropdown menu when a navigation link is clicked
+    navLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+            navigation.classList.remove("active");
+        });
+    });
 });
 
 // Smooth scrolling for anchor links
